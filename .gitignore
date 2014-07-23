@@ -15,8 +15,7 @@ $RECYCLE.BIN/
 *.msp
 *.classpath
 *.project
-bin
-gen
+
 
 
 # =========================
