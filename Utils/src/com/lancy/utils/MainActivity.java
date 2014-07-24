@@ -2,6 +2,7 @@ package com.lancy.utils;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
@@ -10,6 +11,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		startActivity(new Intent(this, ImageActivity.class));//获取图片，裁剪
+		
+		
+		finish();
 	}
 
 	@Override
