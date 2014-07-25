@@ -1,7 +1,9 @@
-package com.lancy.utils;
+package com.lancy.utils.imageUI;
 
 import java.io.File;
 
+import com.lancy.utils.R;
+import com.lancy.utils.R.layout;
 import com.lancy.utils.util.FileUtil;
 
 import android.app.Activity;

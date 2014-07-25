@@ -1,4 +1,4 @@
-package com.lancy.utils;
+package com.lancy.utils.imageUI;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

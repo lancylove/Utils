@@ -12,6 +12,11 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.widget.ImageView;
 
+/**
+ * 切图
+ * @author Lancy
+ *
+ */
 public class CropImageView extends ImageView {
 
     public CropImageView(Context context, AttributeSet attrs) {
