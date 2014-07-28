@@ -17,6 +17,12 @@
 	<!-- 网络下载 -->
 	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
 	
+	<!-- 获取当前任务 -->
+	<uses-permission android:name="android.permission.GET_TASKS"/>
+	
+	<!-- 拦截home建 -->
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -39,6 +45,28 @@
         
         <!-- listview搜索 -->
         <activity android:name="com.lancy.utils.filter.Listviewfilter"></activity>
+        
+        <!-- applock 应用锁 -->
+        <activity android:name="com.lancy.utils.applock.Applock"
+             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+        <activity android:name="com.lancy.utils.applock.ApplockActivity"></activity>
+        <receiver android:name="com.lancy.utils.applock.PlanReceiver"></receiver>
+        <service android:name="com.lancy.utils.applock.appLockServer"></service>
+        
+        <!-- home建 -->
+         <activity android:name="com.lancy.utils.homecode.ComtrolHomeActivity"
+            
+             ></activity>
+         <activity android:name="com.lancy.utils.homecode.homelock"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:launchMode="singleTask"
+             ></activity>
+         <receiver android:name="com.lancy.utils.homecode.ControlhomeReceiver"></receiver>
+        <service android:name="com.lancy.utils.homecode.controlHomeServer"></service>
+        
       </application>
+      
+    
+    
 
 </manifest>

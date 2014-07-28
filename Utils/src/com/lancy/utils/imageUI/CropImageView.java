@@ -1,4 +1,4 @@
- package com.lancy.utils.widget;
+ package com.lancy.utils.imageUI;
 
 import android.content.Context;
 import android.graphics.Bitmap;

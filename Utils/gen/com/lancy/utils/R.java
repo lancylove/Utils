@@ -43,26 +43,36 @@ public final class R {
         public static final int search_clear=0x7f02000d;
         public static final int search_clear_normal=0x7f02000e;
         public static final int search_clear_pressed=0x7f02000f;
+        public static final int sidebar_background=0x7f020010;
+        public static final int sidebar_background_pressed=0x7f020011;
     }
     public static final class id {
-        public static final int action_settings=0x7f090009;
-        public static final int agetv=0x7f090005;
+        public static final int action_settings=0x7f09000e;
+        public static final int agetv=0x7f09000a;
         public static final int btn_take=0x7f090000;
-        public static final int editText1=0x7f090002;
+        public static final int checkto_contacts_list=0x7f090004;
+        public static final int close=0x7f090003;
+        public static final int editText1=0x7f090007;
+        public static final int floating_header=0x7f090006;
         public static final int image=0x7f090001;
-        public static final int itemtv=0x7f090004;
-        public static final int listView1=0x7f090003;
-        public static final int query=0x7f090007;
-        public static final int search_clear=0x7f090008;
-        public static final int sextv=0x7f090006;
+        public static final int itemtv=0x7f090009;
+        public static final int listView1=0x7f090008;
+        public static final int open=0x7f090002;
+        public static final int query=0x7f09000c;
+        public static final int search_clear=0x7f09000d;
+        public static final int sextv=0x7f09000b;
+        public static final int sidebar=0x7f090005;
     }
     public static final class layout {
         public static final int actionsheet=0x7f030000;
         public static final int activity_crop_image=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int listviewfilter=0x7f030003;
-        public static final int listviewitem=0x7f030004;
-        public static final int search_bar=0x7f030005;
+        public static final int applock=0x7f030003;
+        public static final int homecontrol=0x7f030004;
+        public static final int letterindex=0x7f030005;
+        public static final int listviewfilter=0x7f030006;
+        public static final int listviewitem=0x7f030007;
+        public static final int search_bar=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;
