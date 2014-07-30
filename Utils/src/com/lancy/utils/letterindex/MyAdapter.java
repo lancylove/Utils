@@ -31,7 +31,10 @@ public class MyAdapter extends BaseAdapter {
 	}
 
 
-
+/***
+ * 返回给要显示那些字符ABCD...
+ * @return
+ */
 	public String[] getSections() {
 		// TODO Auto-generated method stub
 		return null;
