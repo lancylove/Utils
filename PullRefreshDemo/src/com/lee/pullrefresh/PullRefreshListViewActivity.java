@@ -87,9 +87,9 @@ public class PullRefreshListViewActivity extends Activity {
         @Override
         protected void onPostExecute(String[] result) {
             boolean hasMoreData = true;
-            if (mIsStart) {
+            if (mIsStart) {//下拉刷新
                 mListItems.addFirst("Added after refresh...");
-            } else {
+            } else {//上拉加载
                 int start = mCurIndex;
                 int end = mCurIndex + mLoadDataCount;
                 if (end >= mStrings.length) {

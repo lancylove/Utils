@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lancy.utils"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
     
     <!-- 文件操作权限 -->
@@ -41,7 +41,10 @@
         <!-- 图片处理 -->
       <activity android:name="com.lancy.utils.imageUI.ImageActivity"></activity>  
        <activity android:name="com.lancy.utils.imageUI.CropImage"></activity>  
-        <activity android:name="com.lancy.utils.imageUI.ActionSheet"></activity>  
+        <activity android:name="com.lancy.utils.imageUI.ActionSheet"
+            android:theme="@style/MyDialogStyleBottom"
+            android:screenOrientation="portrait"
+            ></activity>  
         
         <!-- listview搜索 -->
         <activity android:name="com.lancy.utils.filter.Listviewfilter"></activity>
@@ -63,6 +66,11 @@
              ></activity>
          <receiver android:name="com.lancy.utils.homecode.ControlhomeReceiver"></receiver>
         <service android:name="com.lancy.utils.homecode.controlHomeServer"></service>
+        
+        <!-- root权限相关 -->
+        <activity android:name="com.lancy.utils.root.RootActivity"
+             ></activity>
+        
         
       </application>
       

@@ -19,7 +19,7 @@ public class ComtrolHomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.homecontrol);
 		startService(new Intent(this, controlHomeServer.class));
-		startService(new Intent(this, appLockServer.class));
+//		startService(new Intent(this, appLockServer.class));
 		
 		
 	}
@@ -29,7 +29,7 @@ public class ComtrolHomeActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		stopService(new Intent(this, controlHomeServer.class));
-		stopService(new Intent(this, appLockServer.class));
+//		stopService(new Intent(this, appLockServer.class));
 		
 	}
 	
@@ -40,10 +40,10 @@ public class ComtrolHomeActivity extends Activity {
 	      intent.putExtra("lock",true);
 	      sendBroadcast(intent); 
 	      
-	      intent.setAction(CommString.AppLockReceiver);  
-	      intent.putExtra("lock",false);
-	      intent.putExtra("type",1 );
-	      sendBroadcast(intent); 
+//	      intent.setAction(CommString.AppLockReceiver);  
+//	      intent.putExtra("lock",false);
+//	      intent.putExtra("type",1 );
+//	      sendBroadcast(intent); 
 		
 	}
 	
@@ -55,10 +55,10 @@ public class ComtrolHomeActivity extends Activity {
 	      sendBroadcast(intent); 
 	      
 	     
-	      intent.setAction(CommString.AppLockReceiver);  
-	      intent.putExtra("lock",true);
-	      intent.putExtra("type",1 );
-	      sendBroadcast(intent); 
+//	      intent.setAction(CommString.AppLockReceiver);  
+//	      intent.putExtra("lock",true);
+//	      intent.putExtra("type",1 );
+//	      sendBroadcast(intent); 
 	}
 
 }

@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ImageActivity extends Activity {
 	private static final int REQUEST_CODE_BEFORE_CROP = 0;//通过拍照或者照相获取图片
@@ -89,11 +90,11 @@ public class ImageActivity extends Activity {
 					}
 					uri = Uri.fromFile(FileUtil.getFile(FileUtil.otherpath, "tmp.jpg"));
 				}
-//				startActivityForResult(
-//						new Intent(this, CropImage.class).putExtra("uri", uri),
-//						REQUEST_CODE_CROP);
+				startActivityForResult(
+						new Intent(this, CropImage.class).putExtra("uri", uri),
+						REQUEST_CODE_CROP);
 				
-				startPhotoZoom(uri, PHOTO_REQUEST_CUT);
+//				startPhotoZoom(uri, PHOTO_REQUEST_CUT);
 				
 				
 
@@ -103,7 +104,10 @@ public class ImageActivity extends Activity {
 					btn.setBackgroundDrawable(new BitmapDrawable(cropBitmap));
 					FileUtil.saveBitmap(FileUtil.cachepath, "tmp.jpg", cropBitmap);
 					
+					cropBitmap =null;
 					
+				}else{
+					Toast.makeText(mContext, "取消", 0).show();
 					
 				}
 				break;

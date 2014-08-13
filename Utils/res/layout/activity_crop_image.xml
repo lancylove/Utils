@@ -9,28 +9,47 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@android:color/black"
+        android:background="@android:color/holo_blue_light"
         android:scaleType="matrix" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#141414"
+        android:gravity="center"
         android:padding="10dp" >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="取消"
-            
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="46dip"
+            android:layout_height="44dip"
+            android:src="@drawable/ic_cancel"
             android:onClick="back" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="确定"
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="46dip"
+            android:layout_height="44dip"
+            
+            android:src="@drawable/ic_reverleft"
+            android:onClick="toleft" />
+        
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="46dip"
+            android:layout_height="44dip"
+            
+            android:src="@drawable/ic_reverright"
+            android:onClick="toright" />
+        
+        
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="46dip"
+            android:layout_height="44dip"
+            
+            android:src="@drawable/ic_ok"
             android:onClick="save" />
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

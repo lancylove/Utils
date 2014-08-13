@@ -39,6 +39,12 @@ public class homelock extends Activity {
 		if(enale){
 			lockLayer.unlock(); 
 			 mContext.finish();
+			 //返回主界面
+//			 Intent i = new Intent(Intent.ACTION_MAIN);  
+//			  i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+//			  i.addCategory(Intent.CATEGORY_HOME);  
+//			  startActivity(i);
+			 
 		}else{
 			lockLayer.lock();
 		}
@@ -53,10 +59,10 @@ public void open(View v){
 	      intent.putExtra("lock",true);
 	      sendBroadcast(intent); 
 	      
-	      intent.setAction(CommString.AppLockReceiver);  
-	      intent.putExtra("lock",false);
-	      intent.putExtra("type",1 );
-	      sendBroadcast(intent); 
+//	      intent.setAction(CommString.AppLockReceiver);  
+//	      intent.putExtra("lock",false);
+//	      intent.putExtra("type",1 );
+//	      sendBroadcast(intent); 
 		
 	}
 	
@@ -67,10 +73,10 @@ public void open(View v){
 	      intent.putExtra("lock",false);
 	      sendBroadcast(intent); 
 	      
-	      intent.setAction(CommString.AppLockReceiver);  
-	      intent.putExtra("lock",true);
-	      intent.putExtra("type",1 );
-	      sendBroadcast(intent); 
+//	      intent.setAction(CommString.AppLockReceiver);  
+//	      intent.putExtra("lock",true);
+//	      intent.putExtra("type",1 );
+//	      sendBroadcast(intent); 
 	}
 	
 	

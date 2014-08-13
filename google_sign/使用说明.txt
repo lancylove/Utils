@@ -1,0 +1,2 @@
+c:\Users\Admin> 
+java -jar signapk.jar platform.x509.pem platform.pk8 123.apk mdm3.0.apk

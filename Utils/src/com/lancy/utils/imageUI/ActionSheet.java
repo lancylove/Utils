@@ -36,10 +36,7 @@ public class ActionSheet extends Activity {
 	 */
 	public void shoot(View view) {
 		cameraFile = FileUtil.getFile(FileUtil.otherpath, "tmp.jpg");
-		Log.i("tmp.jpg", cameraFile.getAbsolutePath());
-//		    if(cameraFile.exists()){
-//		    	cameraFile.delete();
-//		    }
+		
 		    startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE).putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(cameraFile)), REQUEST_CODE_CAMERA);
 	    
 	}
@@ -72,8 +69,7 @@ public class ActionSheet extends Activity {
 		    intent.setType("image/*");
 	        
 	    } else {
-	        //change to below intent to support 4.4 content resolver change
-            //http://developer.android.com/about/versions/android-4.4.html
+	       
 		    intent = new Intent(
 		        Intent.ACTION_PICK,
 		        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

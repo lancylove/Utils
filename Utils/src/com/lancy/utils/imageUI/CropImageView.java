@@ -19,35 +19,6 @@ import android.widget.ImageView;
  */
 public class CropImageView extends ImageView {
 
-    public CropImageView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		paint = new Paint();
-		paint.setColor(Color.BLUE);
-		paint.setStrokeWidth(2);
-		paint.setStyle(Paint.Style.STROKE);
-		matrixUninitialized = true;
-		matrix = new Matrix();
-		
-		mScaleDetector = new ScaleGestureDetector(context, new ScaleGestureDetector.SimpleOnScaleGestureListener(){
-			@Override
-			public boolean onScale(ScaleGestureDetector detector) {
-				Log.d("sss", "on scale: " + detector.getScaleFactor());
-				matrix.set(getImageMatrix());
-				float scaleFactor = detector.getScaleFactor();
-				matrix.getValues(values);
-				float scaleFactorToBe = values[Matrix.MSCALE_X] * scaleFactor;
-				Log.d("sss", "scale to be: " + scaleFactorToBe);
-				if(!(scaleFactorToBe > maximumScale) && !(scaleFactorToBe < baseScale)){
-					matrix.postScale(scaleFactor, scaleFactor, detector.getFocusX(), detector.getFocusY());
-					setImageMatrix(matrix);
-					invalidate();
-					return true;
-				}
-				return super.onScale(detector);
-			}
-		});
-	}
-
     private Matrix matrix;
 	private int width;
     private int height;
@@ -82,11 +53,45 @@ public class CropImageView extends ImageView {
     	return bottom;
     }
     
+
+    public CropImageView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		paint = new Paint();
+		paint.setColor(Color.YELLOW);
+		paint.setStrokeWidth(2);
+		paint.setStyle(Paint.Style.STROKE);
+		matrixUninitialized = true;
+		matrix = new Matrix();
+		
+		mScaleDetector = new ScaleGestureDetector(context, new ScaleGestureDetector.SimpleOnScaleGestureListener(){
+			@Override
+			public boolean onScale(ScaleGestureDetector detector) {
+				Log.d("sss", "on scale: " + detector.getScaleFactor());
+				matrix.set(getImageMatrix());
+				float scaleFactor = detector.getScaleFactor();
+				matrix.getValues(values);
+				float scaleFactorToBe = values[Matrix.MSCALE_X] * scaleFactor;
+				Log.d("sss", "scale to be: " + scaleFactorToBe);
+				if(!(scaleFactorToBe > maximumScale) && !(scaleFactorToBe < baseScale)){
+					Log.d("sss", "maximumScale----------------"+maximumScale);
+					matrix.postScale(scaleFactor, scaleFactor, detector.getFocusX(), detector.getFocusY());
+					setImageMatrix(matrix);
+					invalidate();
+					return true;
+				}
+				return super.onScale(detector);
+			}
+		});
+	}
+    
+    
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+     
         width = getWidth();
         height = getHeight();
+        Log.d("sss", "onMeasure--height--"+width+"--height-"+height);
         if(width < height){
         	boxSize = width - 60;
         	left = 30;

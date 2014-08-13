@@ -61,6 +61,8 @@ public class PlanReceiver extends BroadcastReceiver {
 		ActivityManager am = (ActivityManager) context.getSystemService("activity");
 		String currentrunningpk = am.getRunningTasks(1).get(0).topActivity.getPackageName();
 		
+
+		
 //		List<ActivityManager.RunningTaskInfo>  list = am.getRunningTasks(10);
 		
 		
