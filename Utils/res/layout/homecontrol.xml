@@ -4,13 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="open"
-        
-        android:text="解锁" />
+    
 
     <Button
         android:id="@+id/close"

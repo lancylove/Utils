@@ -22,6 +22,7 @@
 	
 	<!-- 拦截home建 -->
 	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
 	
     <application
         android:allowBackup="true"
@@ -70,6 +71,24 @@
         <!-- root权限相关 -->
         <activity android:name="com.lancy.utils.root.RootActivity"
              ></activity>
+        
+        
+        <!-- 设备管理器 -->
+        <activity android:name="com.lancy.utils.devicemanager.DeviceMainActivity"/>
+        <receiver android:name="com.lancy.utils.devicemanager.MyDeviceAdminReceiver"
+            android:label="@string/deviceadminLable"
+            android:description="@string/deviceadmintest"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin"
+                />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+                </intent-filter>
+            
+        </receiver>
         
         
       </application>

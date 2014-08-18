@@ -4,5 +4,6 @@
     <string name="app_name">Utils</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="deviceadminLable">设备管理器</string>
+	<string name="deviceadmintest">设备管理器测试</string>
 </resources>

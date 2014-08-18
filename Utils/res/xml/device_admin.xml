@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+     <uses-policies>
+         <!-- 强行锁定（这里只需要这个） -->  
+        <force-lock />  
+  
+        <!-- 清除所有数据（恢复出厂设置） -->  
+        <wipe-data />  
+  
+        <!-- 重置密码 -->  
+        <reset-password />  
+  
+        <!-- 设置密码规则 -->  
+        <limit-password />  
+  
+        <!-- 监控登录尝试次数 -->  
+        <watch-login />  
+         
+        <!-- 控制摄像机 -->
+        <disable-camera/>
+           
+          <!-- 设置屏幕解锁密码有效 -->
+         <expire-password/>
+       
+         <!-- 密码恢复 -->
+        <recover-password />
+        
+       
+        <history-password />
+        
+        
+        <min-passwordcomplexchars />
+        
+        <!--require encryption of stored data 需要存储的数据加密  -->
+        <require-device-encryption />
+        <!-- 设置SD卡加密 -->
+        <require-storagecard-encryption />
+        
+        <allow-wifi />
+        <allow-bluetoothmode />
+        <encrypted-storage />
+        
+         </uses-policies>
+    
+</device-admin>

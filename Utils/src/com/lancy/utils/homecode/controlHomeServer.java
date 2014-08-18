@@ -55,8 +55,6 @@ public class controlHomeServer extends Service {
 		public void onReceive(Context context, Intent intent) {
 			Boolean lock =true;
 			lock = intent.getBooleanExtra("lock", true);
-			Log.i(LOGTAG, "home   lock： "+lock);
- 
 			
 			if(homelock.lockLayer!=null)
 				homelock.control(lock);

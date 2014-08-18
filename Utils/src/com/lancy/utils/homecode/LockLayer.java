@@ -2,6 +2,7 @@ package com.lancy.utils.homecode;
 
 import android.app.Activity;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
@@ -34,12 +35,22 @@ public class LockLayer {
 	        mLockViewLayoutParams.height = LayoutParams.MATCH_PARENT;  
 	        //实现关键  
 	        mLockViewLayoutParams.type = LayoutParams.TYPE_SYSTEM_ERROR;  
+	        
+//	        mLockViewLayoutParams.type = LayoutParams.TYPE_SYSTEM_ALERT;
+	        
 	        //apktool value，这个值具体是哪个变量还请网友帮忙  
-	        mLockViewLayoutParams.flags = 1280;  
+//	        mLockViewLayoutParams.flags = 1280;  
+	        mLockViewLayoutParams.flags = LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+//	        Window w = mActivty.getWindow();
+	       
+	        
+	        
 	    }  
 	    public synchronized void lock() {  
 	        if(mLockView!=null&&!isLocked){  
 	            mWindowManager.addView(mLockView, mLockViewLayoutParams);  
+	           
+	            
 	        }  
 	        isLocked = true;  
 	    }  

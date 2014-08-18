@@ -21,13 +21,10 @@ public class PlanReceiver extends BroadcastReceiver {
 		if(type == 1){
 			
 			if(!getCurrentPk(context).equals("com.lancy.utils")){
-				Log.i("currentrunningpk", getCurrentPk(context));
-				
-
-					Log.i("currentrunningpk2222", getCurrentPk(context));
-					 Intent startTaobao = new Intent(context, homelock.class).putExtra("lock", false);  
-				    startTaobao.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
-				    context.startActivity(startTaobao); 
+				Log.i("currentrunningpk2222", getCurrentPk(context));
+				Intent startTaobao = new Intent(context, homelock.class).putExtra("lock", false);  
+				 startTaobao.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+				 context.startActivity(startTaobao); 
 
 				
 			}
