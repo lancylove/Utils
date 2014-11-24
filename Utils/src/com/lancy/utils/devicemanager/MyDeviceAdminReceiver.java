@@ -1,19 +1,16 @@
 package com.lancy.utils.devicemanager;
 
 import com.lancy.utils.CommString;
+import com.lancy.utils.applock.appLockServer;
+import com.lancy.utils.homecode.FloatingService;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.admin.DeviceAdminReceiver;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.Toast;
 
 public class MyDeviceAdminReceiver extends DeviceAdminReceiver {
 	private String TAG = "MyDeviceAdminReceiver";
@@ -50,10 +47,14 @@ public class MyDeviceAdminReceiver extends DeviceAdminReceiver {
 		
 
 		
-		Intent intent1 = new Intent();  	//获取策略
-	      intent1.setAction(CommString.homeReceiver);  
-	      intent1.putExtra("lock",false);
-	      context.sendBroadcast(intent1); 
+//		Intent intent1 = new Intent();  	//获取策略
+//	      intent1.setAction(CommString.homeReceiver);  
+//	      intent1.putExtra("lock",false);
+//	      context.sendBroadcast(intent1);
+	      
+	      Intent startTaobao = new Intent(context, FloatingService.class); 
+			context.startService(startTaobao);
+			
 	      
 		return "确定取消？";
 	}
@@ -62,7 +63,6 @@ public class MyDeviceAdminReceiver extends DeviceAdminReceiver {
 	public void onDisabled(Context context, Intent intent) {
 		Log.i(TAG, "onDisabled");
 		super.onDisabled(context, intent);
-		
 	}
 
 	@Override

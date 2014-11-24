@@ -14,6 +14,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 
 public class FileUtil {
 
@@ -103,7 +106,57 @@ public class FileUtil {
 	 } 
 
 
-	
+	/**
+     * 将assets文件夹下的apk fileName，拷贝到路径path
+     * 
+     * @param context
+     *            上下文环境
+     * @param fileName
+     *            apk名称
+     * @param path
+     *            存储APK路径
+     * @return
+     */
+    public boolean copyMDMApkFromAssets(Context context, String fileName,
+                    String path,Handler handler) {
+            boolean bRet = false;
+            try {
+                    InputStream is = context.getAssets().open(fileName);
+
+                    File file1 = new File(path);
+                    if(!file1.exists()){
+                    	file1.mkdir();
+                    }
+                    File file = new File(path+"/"+fileName);
+                    file.createNewFile();
+                    FileOutputStream fos = new FileOutputStream(file);
+
+                    byte[] temp = new byte[1024];
+                    int i = 0;
+                    while ((i = is.read(temp)) > 0) {
+                            fos.write(temp, 0, i);
+                    }
+
+                    fos.close();
+                    is.close();
+
+                    bRet = true;
+
+            } catch (IOException e) {
+                    e.printStackTrace();
+            }
+            if(bRet){
+            	Message mes = new Message();
+            	mes.what=0;
+            	handler.sendMessage(mes);
+            }else{
+            	Message mes = new Message();
+            	mes.what=-1;
+            	handler.sendMessage(mes);
+            	
+            }
+            return bRet;
+    }
 
 	
 	

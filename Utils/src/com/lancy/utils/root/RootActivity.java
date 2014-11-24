@@ -1,9 +1,11 @@
 package com.lancy.utils.root;
 
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 
 import com.lancy.utils.R;
+import com.lancy.utils.util.FileUtil;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -29,6 +31,8 @@ public class RootActivity extends Activity {
 		} else {
 			tv.setText("没有root权限");
 		}
+		
+		
 
 		
 
@@ -36,20 +40,20 @@ public class RootActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(RootActivity.this, "---", 0).show();
+				
 				
 					
-					RootUtils.kill("com.justsy.justchat");
-//					p = Runtime.getRuntime().exec("su");
-//					
-//					String packageName="com.justsy.justchat";
-//					String cmd = "am force-stop " + packageName + " \n"; 
-//					DataOutputStream os = new DataOutputStream(p.getOutputStream());
-//					os.writeBytes(cmd);
-//					os.writeBytes("exit\n");
-//					os.flush();
-//					os.close();
-				
+//					RootUtils.kill("com.justsy.justchat");
+					
+					File file = new File(FileUtil.path+"/Download/SingleTing2.0.apk");
+					RootUtils.slientInstall(file);
+					Toast.makeText(RootActivity.this, file.getAbsolutePath(), 0).show();
+
+//				if(RootUtils.slientUninstall("com.up.control")){
+//					Toast.makeText(RootActivity.this, "卸载成功", 0).show();
+//				}else{
+//					Toast.makeText(RootActivity.this, "卸载失败", 0).show();
+//				}
 				
 				
 			}

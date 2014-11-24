@@ -37,6 +37,7 @@
         <require-storagecard-encryption />
         
         <allow-wifi />
+        
         <allow-bluetoothmode />
         <encrypted-storage />
         

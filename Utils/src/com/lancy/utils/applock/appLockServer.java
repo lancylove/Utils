@@ -1,6 +1,7 @@
 package com.lancy.utils.applock;
 
 import com.lancy.utils.CommString;
+import com.lancy.utils.homecode.FloatingService;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -23,9 +24,11 @@ public class appLockServer  extends Service{
 			appLockReceiver = new AppLockReceiver();				// 应用锁
 			IntentFilter appLockFilter = new IntentFilter();
 			appLockFilter.addAction(CommString.AppLockReceiver);
+			appLockFilter.addAction(CommString.homeReceiver);
 			registerReceiver(appLockReceiver, appLockFilter);
-			Log.i(LOGTAG, "应用锁   开启");
-	
+			
+			
+			
 	}
 
 	
@@ -37,6 +40,7 @@ public class appLockServer  extends Service{
 		super.onDestroy();
 	}
 	
+	
 	/**
 	 * 
 	 *应用锁开关
@@ -46,11 +50,18 @@ public class appLockServer  extends Service{
 	private class AppLockReceiver extends BroadcastReceiver { 	// 应用锁
 		@Override
 		public void onReceive(Context context, Intent intent) {
+			
 			Boolean lock =true;
-			lock = intent.getBooleanExtra("lock", true);
-			int type = intent.getIntExtra("type", 0);
-			Log.i(LOGTAG, "应用锁   lock： "+lock);
-			updateforbiddenpklist(lock,type);						//打开或关闭应用锁
+			if(intent.getAction().equals(CommString.AppLockReceiver)){
+				lock = intent.getBooleanExtra("lock", true);
+				int type = intent.getIntExtra("type", 0);
+				Log.i(LOGTAG, "应用锁   lock： "+lock);
+				updateforbiddenpklist(lock,type);						//打开或关闭应用锁
+			}else if(intent.getAction().equals(CommString.homeReceiver)){
+				
+				Log.i(LOGTAG, "屏幕锁   lock： ");
+			}
+			
 		}
 	}
 	
@@ -67,6 +78,8 @@ public class appLockServer  extends Service{
 		}
 		else{
 			am.cancel(tpr);  //取消闹钟
+			stopSelf();
+			Log.i("ComtrolHomeActivity", "应用锁 关闭服务！");
 		}
 		
 	}

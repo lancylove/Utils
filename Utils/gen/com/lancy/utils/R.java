@@ -25,6 +25,7 @@ public final class R {
         public static final int slide_in_from_right=0x7f04000d;
         public static final int slide_out_to_left=0x7f04000e;
         public static final int slide_out_to_right=0x7f04000f;
+        public static final int test=0x7f040010;
     }
     public static final class attr {
     }
@@ -33,6 +34,7 @@ public final class R {
         public static final int btn_gray_pressed=0x7f060001;
         public static final int btn_white_normal=0x7f060002;
         public static final int btn_white_pressed=0x7f060003;
+        public static final int transparent=0x7f060004;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -57,44 +59,53 @@ public final class R {
         public static final int ic_ok=0x7f020009;
         public static final int ic_reverleft=0x7f02000a;
         public static final int ic_reverright=0x7f02000b;
-        public static final int search_bar_bg=0x7f02000c;
-        public static final int search_bar_edit_bg=0x7f02000d;
-        public static final int search_bar_edit_normal=0x7f02000e;
-        public static final int search_bar_edit_pressed=0x7f02000f;
-        public static final int search_bar_icon_normal=0x7f020010;
-        public static final int search_clear=0x7f020011;
-        public static final int search_clear_normal=0x7f020012;
-        public static final int search_clear_pressed=0x7f020013;
-        public static final int sidebar_background=0x7f020014;
-        public static final int sidebar_background_pressed=0x7f020015;
+        public static final int login_bg=0x7f02000c;
+        public static final int qrcode_scan_line=0x7f02000d;
+        public static final int search_bar_bg=0x7f02000e;
+        public static final int search_bar_edit_bg=0x7f02000f;
+        public static final int search_bar_edit_normal=0x7f020010;
+        public static final int search_bar_edit_pressed=0x7f020011;
+        public static final int search_bar_icon_normal=0x7f020012;
+        public static final int search_clear=0x7f020013;
+        public static final int search_clear_normal=0x7f020014;
+        public static final int search_clear_pressed=0x7f020015;
+        public static final int sidebar_background=0x7f020016;
+        public static final int sidebar_background_pressed=0x7f020017;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0019;
-        public static final int agetv=0x7f0b0015;
+        public static final int action_settings=0x7f0b0020;
+        public static final int agetv=0x7f0b0016;
         public static final int btn_take=0x7f0b0000;
-        public static final int button1=0x7f0b0004;
-        public static final int button2=0x7f0b0005;
-        public static final int button3=0x7f0b0006;
-        public static final int button4=0x7f0b0008;
-        public static final int button5=0x7f0b0009;
-        public static final int button6=0x7f0b000a;
-        public static final int button7=0x7f0b000b;
-        public static final int button8=0x7f0b000c;
-        public static final int button9=0x7f0b000d;
-        public static final int checkto_contacts_list=0x7f0b0010;
-        public static final int close=0x7f0b0003;
-        public static final int differentlistview=0x7f0b000f;
-        public static final int editText1=0x7f0b0007;
-        public static final int floating_header=0x7f0b0012;
+        public static final int button1=0x7f0b0005;
+        public static final int button2=0x7f0b0006;
+        public static final int button3=0x7f0b0007;
+        public static final int button4=0x7f0b0009;
+        public static final int button5=0x7f0b000a;
+        public static final int button6=0x7f0b000b;
+        public static final int button7=0x7f0b000c;
+        public static final int button8=0x7f0b000d;
+        public static final int button9=0x7f0b000e;
+        public static final int checkto_contacts_list=0x7f0b0011;
+        public static final int close=0x7f0b0004;
+        public static final int delete=0x7f0b001e;
+        public static final int differentlistview=0x7f0b0010;
+        public static final int editText1=0x7f0b0008;
+        public static final int floating_header=0x7f0b0013;
+        public static final int holder=0x7f0b001d;
         public static final int image=0x7f0b0001;
-        public static final int itemtv=0x7f0b0014;
-        public static final int listView1=0x7f0b0013;
-        public static final int open=0x7f0b0002;
-        public static final int query=0x7f0b0017;
-        public static final int search_clear=0x7f0b0018;
-        public static final int sextv=0x7f0b0016;
-        public static final int sidebar=0x7f0b0011;
-        public static final int textView1=0x7f0b000e;
+        public static final int imageView1=0x7f0b0018;
+        public static final int itemtv=0x7f0b0015;
+        public static final int listView1=0x7f0b0014;
+        public static final int open=0x7f0b0003;
+        public static final int query=0x7f0b001a;
+        public static final int scroll_img=0x7f0b0019;
+        public static final int search_clear=0x7f0b001b;
+        public static final int sextv=0x7f0b0017;
+        public static final int sidebar=0x7f0b0012;
+        public static final int slidview=0x7f0b001f;
+        public static final int textView1=0x7f0b000f;
+        public static final int textview=0x7f0b0002;
+        public static final int view_content=0x7f0b001c;
     }
     public static final class layout {
         public static final int actionsheet=0x7f030000;
@@ -103,11 +114,17 @@ public final class R {
         public static final int applock=0x7f030003;
         public static final int deviceadmin=0x7f030004;
         public static final int differentlistview=0x7f030005;
-        public static final int homecontrol=0x7f030006;
-        public static final int letterindex=0x7f030007;
-        public static final int listviewfilter=0x7f030008;
-        public static final int listviewitem=0x7f030009;
-        public static final int search_bar=0x7f03000a;
+        public static final int floating=0x7f030006;
+        public static final int homecontrol=0x7f030007;
+        public static final int letterindex=0x7f030008;
+        public static final int listviewfilter=0x7f030009;
+        public static final int listviewitem=0x7f03000a;
+        public static final int listviewslidview=0x7f03000b;
+        public static final int qrtest=0x7f03000c;
+        public static final int scroll=0x7f03000d;
+        public static final int search_bar=0x7f03000e;
+        public static final int slidcontent=0x7f03000f;
+        public static final int slidtest=0x7f030010;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;

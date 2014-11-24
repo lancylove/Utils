@@ -12,10 +12,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.lancy.utils.CommString;
 import com.lancy.utils.R;
 import com.lancy.utils.applock.appLockServer;
-import com.lancy.utils.homecode.controlHomeServer;
 
+/**
+ * 设备管理器功能
+ * 防卸载功能
+ * @author Lancy
+ *
+ */
 public class DeviceMainActivity extends Activity {
 
 	private Button openDeviceAdminBtn,closeDeviceAdminBtn,lockBtn;
@@ -30,8 +36,13 @@ public class DeviceMainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.deviceadmin);
 		mContext = this;
+		
+
+		 Intent startTaobao1 = new Intent(mContext, appLockServer.class); 
+		 mContext.startService(startTaobao1);
+			
 		initView();
-		startService(new Intent(this, controlHomeServer.class));
+
 		
 	}
 
@@ -46,6 +57,7 @@ public class DeviceMainActivity extends Activity {
 	}
 	
 	public void open(View v){
+		
 		startDeviceManager();
 	}
 	
@@ -162,6 +174,13 @@ public class DeviceMainActivity extends Activity {
 		
 		switch (requestCode) {
 		case 0:
+			
+			Intent inten = new Intent();  	//获取策略
+		      inten.setAction(CommString.AppLockReceiver);  
+		      inten.putExtra("lock",true);
+		      inten.putExtra("type",0 );
+		      mContext.sendBroadcast(inten); 
+			
 			Log.i("resultcode", resultCode+"----");
 			Toast.makeText(mContext, "resultcode="+resultCode, Toast.LENGTH_LONG).show();
 			break;

@@ -31,7 +31,7 @@ public class ApplockActivity extends Activity {
 			      intent.putExtra("lock",true);
 			      intent.putExtra("type",0 );
 			      sendBroadcast(intent); 
-				
+				finish();
 				
 			}
 		});
