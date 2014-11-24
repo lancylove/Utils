@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--
+@android:anim/accelerate_interpolator： 越来越快
+
+@android:anim/decelerate_interpolator：越来越慢
+
+@android:anim/accelerate_decelerate_interpolator：先快后慢
+
+@android:anim/anticipate_interpolator: 先后退一小步然后向前加速
+
+@android:anim/overshoot_interpolator：快速到达终点超出一小步然后回到终点
+
+@android:anim/anticipate_overshoot_interpolator：到达终点超出一小步然后回到终点
+
+@android:anim/bounce_interpolator：到达终点产生弹球效果，弹几下回到终点
+
+@android:anim/linear_interpolator：均匀速度。
+    -->
+
+    <translate
+        android:duration="2000"
+        android:fromXDelta="10%p"
+        android:fromYDelta="30%p"
+        android:interpolator="@android:anim/bounce_interpolator"
+        android:toXDelta="10%p"
+        android:toYDelta="70%p" 
+        
+        android:repeatCount="infinite"
+        android:repeatMode="restart"
+        >
+    </translate>
+
+</set>
